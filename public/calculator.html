@@ -5,21 +5,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math</title>
+  <title>Postal Rate Calculator</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
 </head>
 <body>
-  <form action="/math" method="POST">
-    <input id="firstnumber" name="firstnumber" type="number">
-    <select name="operator">
-      <option value="+">+</option>
-      <option value="-">-</option>
-      <option value="x">x</option>
-      <option value="/">/</option>
-    </select>
-    <input id='secondnumber' name="secondnumber" type="number">
-    <input type="submit" value="=">
-    <input type="submit" formaction='/math_service'> Ajax </button>
-  </form>
-  <div id="output"></div>
+    <main>
+        <img src="images/usps.png" alt="United States Postal Service Logo">
+        <h1>Postal Rate Calculator</h1>
+        <form action="/getRate" method="POST">
+            <div>
+                <label for="weight">Weight (oz.):</label>
+                <input id="weight" name="weight" type="text">
+            </div>
+            <div>
+                <label>Mail type: </label>
+                <select name="mail_type">
+                    <option value="stamped">Letters (stamped)</option>
+                    <option value="metered">Letters (metered)</option>
+                    <option value="flat">Large Envelopes (Flats)</option>
+                    <option value="retail">First-Class Package Service-Retail</option>
+                </select>
+            </div>
+            <div>
+                <label>Zone: </label>
+                <select name="zone">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <input type="submit" value="Calculate">
+        </form>
+        <div id="output"></div>
+    </main>
 </body>
 </html>
