@@ -10,6 +10,7 @@
     </head>
     <body>
         <main>
+            <img src="images/usps.png" alt="United States Postal Service Logo">
             <h1>Postal Rate</h1>
             <table>
                 <tr>
@@ -17,8 +18,12 @@
                     <td><%= weight %> oz.</td>
                 </tr>
                 <tr>
-                    <td>Mail type:</td>
+                    <td>Mail type:&nbsp;</td>
                     <td><%= type %></td>
+                </tr>
+                <tr id="displayZone">
+                    <td>Zone:</td>
+                    <td><%= zone %></td>
                 </tr>
                 <tr>
                     <td>Rate:</td>
@@ -26,5 +31,6 @@
                 </tr>
             </table>
         </main>
+        <script src="../../public/js/scripts.js"></script>
     </body>
 </html>

@@ -12,37 +12,45 @@
     <main>
         <img src="images/usps.png" alt="United States Postal Service Logo">
         <h1>Postal Rate Calculator</h1>
+        <p>Calculate the postal rate for a single piece of retail first-class mail.</p>
         <form action="/getRate" method="POST">
-            <div>
-                <label for="weight">Weight (oz.):</label>
-                <input id="weight" name="weight" type="text">
-            </div>
-            <div>
-                <label>Mail type: </label>
-                <select name="mail_type">
-                    <option value="stamped">Letters (stamped)</option>
-                    <option value="metered">Letters (metered)</option>
-                    <option value="flat">Large Envelopes (Flats)</option>
-                    <option value="retail">First-Class Package Service-Retail</option>
-                </select>
-            </div>
-            <div>
-                <label>Zone: </label>
-                <select name="zone">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                </select>
-            </div>
-            <input type="submit" value="Calculate">
+            <table class="calcForm">
+                <tr>
+                    <td><label for="weight">Weight (oz.):&nbsp;</label></td>
+                    <td><input id="weight" name="weight" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Mail type: </label></td>
+                    <td>
+                        <select class="zone" id="mail_type" name="mail_type">
+                            <option value="stamped">Letters (stamped)</option>
+                            <option value="metered">Letters (metered)</option>
+                            <option value="flat">Large Envelopes (Flats)</option>
+                            <option value="retail">First-Class Package Service-Retail</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr id="zones">
+                    <td><label>Zone: </label></td>
+                    <td>
+                        <select id="zone" class="zone" name="zone">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <input id="submit" type="submit" value="Calculate">
         </form>
         <div id="output"></div>
     </main>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

@@ -4,8 +4,33 @@ body {
     justify-content: center;
 }
 
+main {
+    margin-top: 20px;
+}
+
+div {
+    margin: 10px 0;
+}
+
+input, .zone {
+    padding: 10px 0 10px 5px;
+}
+
 h1 {
     background-color: #333366;
     color: #fff;
     padding: 20px;
+}
+
+#submit {
+    background: #b20000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+#zones, #displayZone {
+    display: none;
 }
