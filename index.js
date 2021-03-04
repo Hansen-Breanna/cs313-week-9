@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const fs = require('fs');
+const fs = require('fs')
 const app = express()
 app.use(express.urlencoded({
   extended: true
@@ -19,10 +19,12 @@ app.post('/getRate', function (req, res) {
   var type = req.body.mail_type;
   var zone = req.body.zone;
   var rate = calculateRate(weight, type, zone);
-
+  var getText = getType(type);
+  
   var params = {
     weight: weight,
     type: type,
+    getText: getText,
     zone: zone,
     rate: rate
   };
@@ -33,7 +35,7 @@ app.post('/getRate', function (req, res) {
 function calculateRate(weight, type, zone) {
   var price;
   // read rates json
-  var rawdata = fs.readFileSync('public/rates.json');
+  var rawdata = fs.readFileSync('public/data/rates.json');
   var getRates = JSON.parse(rawdata);
   var rates = getRates[type];
   // type retail
@@ -62,4 +64,17 @@ function calculateRate(weight, type, zone) {
     }
   }
   return price;
+}
+
+function getType(type) {
+  var content;
+  var rawdata = fs.readFileSync('public/data/type.json');
+  var getText =  JSON.parse(rawdata);
+  for (var description in getText) {
+    if (type == description) {
+      content = getText[description];
+      break;
+    }
+  }
+  return content;
 }

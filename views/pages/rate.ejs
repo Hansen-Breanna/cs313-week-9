@@ -19,12 +19,15 @@
                 </tr>
                 <tr>
                     <td>Mail type:&nbsp;</td>
-                    <td><%= type %></td>
+                    <td><%= getText %></td>
                 </tr>
-                <tr id="displayZone">
-                    <td>Zone:</td>
-                    <td><%= zone %></td>
-                </tr>
+                <% if (type == "retail") { %>
+                    <tr id="displayZone">
+                        <td>Zone:</td>
+                        <td><%= zone %></td>
+                    </tr>
+                <% } %>
+               
                 <tr>
                     <td>Rate:</td>
                     <td><%= rate %></td>
