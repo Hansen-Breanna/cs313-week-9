@@ -47,9 +47,11 @@ function calculateRate(weight, type, zone) {
           if (zone <= getRate) {
             price = "$" + getZone[getRate];
             break;
-          }
+          } 
         }
         break;
+      } else {
+        price = "Weight is over the limit for this type of mail.";
       }
     }
     // type stamped, metered, or flat
@@ -74,7 +76,7 @@ function getType(type) {
     if (type == description) {
       content = getText[description];
       break;
-    }
+    } 
   }
   return content;
 }
