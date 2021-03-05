@@ -34,3 +34,7 @@ h1 {
 #zones {
     display: none;
 }
+
+.pr-18 {
+    padding-right: 18px;
+}

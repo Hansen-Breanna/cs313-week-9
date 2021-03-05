@@ -16,11 +16,11 @@
         <form action="/getRate" method="POST">
             <table class="calcForm">
                 <tr>
-                    <td><label for="weight">Weight (oz.):&nbsp;</label></td>
+                    <td><label for="weight" class="pr-18">Weight (oz.):&nbsp;</label></td>
                     <td><input id="weight" name="weight" type="text"></td>
                 </tr>
                 <tr>
-                    <td><label>Mail type: </label></td>
+                    <td><label for="mail_type" class="pr-18">Mail type: </label></td>
                     <td>
                         <select class="zone" id="mail_type" name="mail_type">
                             <option value="stamped">Letters (stamped)</option>
@@ -30,23 +30,21 @@
                         </select>
                     </td>
                 </tr>
-                <tr id="zones">
-                    <td><label>Zone: </label></td>
-                    <td>
-                        <select id="zone" class="zone" name="zone">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select>
-                    </td>
-                </tr>
             </table>
+            <div id="zones">
+                <label>Zone difference: </label>
+                <select id="zone" class="zone" name="zone">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div><br>
             <input id="submit" type="submit" value="Calculate">
         </form>
         <div id="output"></div>
