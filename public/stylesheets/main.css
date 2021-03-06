@@ -25,6 +25,8 @@
     .jumbotron .lang-logo img {
       max-width: 100%; }
 
-.rateImage {
-  width: 80%;
-}
+      .bg-red {
+        background: #B01302;
+        color: #fff;
+        border: none;
+      }
